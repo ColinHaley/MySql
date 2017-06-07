@@ -1,0 +1,22 @@
+create database earnings_data;
+
+# Need to add primary and foreign keys after testing
+CREATE TABLE `earnings_data.whispers` (
+  `confirmed` tinyint(1) NOT NULL DEFAULT 0,
+  `company` varchar(255) NOT NULL DEFAULT '',
+  `ticker` varchar(10) NOT NULL DEFAULT '',
+  `time` DATE,
+  `estimated_earnings_per_share` DOUBLE NOT NULL DEFAULT 0.00,
+  `estimated_revenue` DOUBLE NOT NULL DEFAULT 0.00
+  );
+  
+CREATE TABLE `earnings_data.whispers_archive` (
+  `company` varchar(255) NOT NULL DEFAULT '',
+  `ticker` varchar(10) NOT NULL DEFAULT '',
+  `time` DATE,
+  `actual_earnings_per_share` DOUBLE NOT NULL DEFAULT 0.00,
+  `actual_revenue` DOUBLE NOT NULL DEFAULT 0.00,
+  `estimated_earnings_per_share` DOUBLE NOT NULL DEFAULT 0.00,
+  `estimated_revenue` DOUBLE NOT NULL DEFAULT 0.00,
+  `guidance` tinyint(1) NOT NULL DEFAULT 0
+  );
